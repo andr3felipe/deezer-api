@@ -1,11 +1,32 @@
 import { NavLink } from "react-router-dom";
 import * as S from "./styles";
 import { MagnifyingGlass } from "@phosphor-icons/react";
+import { useContext } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
 import { MusicContext } from "../../contexts/MusicContext";
-import { FormEvent, useContext } from "react";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+
+const schema = z.object({
+  search: z.string().min(1, "Digite algo para pesquisar"),
+});
+
+type Search = z.infer<typeof schema>;
 
 export function Header() {
-  const { handleSearch, search } = useContext(MusicContext);
+  const { handleSearch } = useContext(MusicContext);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Search>({
+    resolver: zodResolver(schema),
+  });
+
+  function handleFormSubmit(data: Search) {
+    handleSearch(data.search);
+  }
 
   return (
     <S.Container>
@@ -14,16 +35,16 @@ export function Header() {
           <S.House size={32} />
         </NavLink>
 
-        <S.Form>
-          <input
-            type="text"
-            placeholder="Buscar"
-            value={search}
-            onChange={(e) => handleSearch(e.target.value)}
-          />
-          <button type="submit">
-            <MagnifyingGlass size={32} />
-          </button>
+        <S.Form onSubmit={handleSubmit(handleFormSubmit)}>
+          <div>
+            <input type="text" placeholder="Buscar" {...register("search")} />
+
+            <button type="submit">
+              <MagnifyingGlass size={32} />
+            </button>
+          </div>
+
+          {errors.search && <p>{errors.search.message}</p>}
         </S.Form>
 
         <NavLink to="/favorites" aria-label="Página de favoritos">

@@ -11,6 +11,9 @@ export interface Track {
   album: {
     cover_big: string;
   };
+  artist: {
+    name: string;
+  };
 }
 
 export interface SearchResponse {
@@ -22,7 +25,7 @@ export interface SearchResponse {
 interface MusicContextType {
   search: string;
   handleSearch: (value: string) => void;
-  tracks: SearchResponse;
+  tracks: SearchResponse | undefined;
 }
 
 export const MusicContext = createContext({} as MusicContextType);

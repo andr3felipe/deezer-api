@@ -8,7 +8,7 @@ export const Container = styled.main`
 export const Tracks = styled.div`
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 2rem;
   flex-flow: row wrap;
 `;

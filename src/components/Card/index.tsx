@@ -3,11 +3,16 @@ import * as S from "./styles";
 interface CardProps {
   image: string;
   title: string;
-  description: string;
   audio: string;
+  duration: number;
+  artist: string;
 }
 
-export function Card({ image, title, description, audio }: CardProps) {
+export function Card({ image, title, audio, duration, artist }: CardProps) {
+  const durationFormat = String(parseFloat((duration / 60).toFixed(2)))
+    .split(".")
+    .join(":");
+
   return (
     <S.Container>
       <S.Head>
@@ -16,7 +21,9 @@ export function Card({ image, title, description, audio }: CardProps) {
 
       <S.Body>
         <S.Title>{title}</S.Title>
-        <S.Description>{description}</S.Description>
+        <S.Description>
+          {artist} {durationFormat}
+        </S.Description>
       </S.Body>
 
       <S.Footer>

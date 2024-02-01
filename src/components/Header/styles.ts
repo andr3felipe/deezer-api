@@ -28,35 +28,44 @@ export const Container = styled.header`
 `;
 
 export const Form = styled.form`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-
-  > input {
-    padding: 0.5rem 2rem 0.5rem;
-    height: 3rem;
+  p {
+    margin-top: 0.5rem;
     text-align: center;
-    background-color: ${({ theme }) => theme.background};
-    color: ${({ theme }) => theme.text};
-    border-radius: 8px;
-
-    &::placeholder {
-      color: ${({ theme }) => theme.text};
-    }
   }
 
-  > button {
-    position: absolute;
-    right: 0.5rem;
-    border: none;
-    background-color: transparent;
-    cursor: pointer;
+  div {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    > svg {
+    > input {
+      padding: 0.5rem 2rem 0.5rem;
+      height: 3rem;
+      text-align: center;
+      background-color: ${({ theme }) => theme.background};
       color: ${({ theme }) => theme.text};
-      &:hover {
-        color: ${({ theme }) => theme.purple};
+      border-radius: 8px;
+
+      &::placeholder {
+        color: ${({ theme }) => theme.text};
+      }
+    }
+
+    > button {
+      position: absolute;
+      right: 0.5rem;
+      top: 50%;
+      transform: translateY(-50%);
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+
+      > svg {
+        color: ${({ theme }) => theme.text};
+        &:hover {
+          color: ${({ theme }) => theme.purple};
+        }
       }
     }
   }

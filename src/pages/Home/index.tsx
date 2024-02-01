@@ -6,7 +6,6 @@ import { MusicContext } from "../../contexts/MusicContext";
 export function Home() {
   const { tracks } = useContext(MusicContext);
 
-  console.log(tracks);
   return (
     <S.Container>
       <S.Tracks>
@@ -14,9 +13,10 @@ export function Home() {
           <Card
             key={track.id}
             audio={track.preview}
-            description={track.title}
             image={track.album.cover_big}
             title={track.title}
+            duration={track.duration}
+            artist={track.artist.name}
           />
         ))}
       </S.Tracks>
