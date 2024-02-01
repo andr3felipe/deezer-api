@@ -9,16 +9,20 @@ export function Home() {
   return (
     <S.Container>
       <S.Tracks>
-        {tracks?.data.map((track) => (
-          <Card
-            key={track.id}
-            audio={track.preview}
-            image={track.album.cover_big}
-            title={track.title}
-            duration={track.duration}
-            artist={track.artist.name}
-          />
-        ))}
+        {tracks ? (
+          tracks?.data.map((track) => (
+            <Card
+              key={track.id}
+              audio={track.preview}
+              image={track.album.cover_big}
+              title={track.title}
+              duration={track.duration}
+              artist={track.artist.name}
+            />
+          ))
+        ) : (
+          <p>Carregando...</p>
+        )}
       </S.Tracks>
     </S.Container>
   );
