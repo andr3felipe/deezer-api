@@ -7,7 +7,7 @@ interface FormProps {
 
 export const Container = styled.header`
   background-color: ${({ theme }) => theme.primary};
-  border-bottom: ${({ theme }) => theme.primary};
+  border-bottom: 0.5px solid ${({ theme }) => theme.accent};
 
   > div {
     max-width: 1440px;
@@ -51,6 +51,7 @@ export const Form = styled.form<FormProps>`
       background-color: ${({ theme }) => theme.background};
       color: ${({ theme }) => theme.text};
       border-radius: 8px;
+      border: none;
 
       &::placeholder {
         color: ${({ theme }) => theme.text};
