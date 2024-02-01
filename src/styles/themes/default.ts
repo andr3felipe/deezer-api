@@ -4,4 +4,6 @@ export const defaultTheme = {
   accent: "#8D8D99",
   text: "#E1E1E6",
   background: "#121214",
+  purple: "#8234E9",
+  purpleHover: "#A35DFF",
 };

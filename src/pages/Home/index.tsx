@@ -1,5 +1,25 @@
+import { useContext } from "react";
+import { Card } from "../../components/Card";
 import * as S from "./styles";
+import { MusicContext } from "../../contexts/MusicContext";
 
 export function Home() {
-  return <S.Container>Home</S.Container>;
+  const { tracks } = useContext(MusicContext);
+
+  console.log(tracks);
+  return (
+    <S.Container>
+      <S.Tracks>
+        {tracks?.data.map((track) => (
+          <Card
+            key={track.id}
+            audio={track.preview}
+            description={track.title}
+            image={track.album.cover_big}
+            title={track.title}
+          />
+        ))}
+      </S.Tracks>
+    </S.Container>
+  );
 }
