@@ -36,6 +36,7 @@ export function Card({
           {isFavorite ? (
             <Heart
               size={40}
+              aria-label="Remover dos favoritos"
               weight="fill"
               color="red"
               onClick={() =>
@@ -55,6 +56,7 @@ export function Card({
           ) : (
             <Heart
               size={40}
+              aria-label="Adicionar aos favoritos"
               color="red"
               onClick={() =>
                 setLocalStorage({
