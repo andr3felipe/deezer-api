@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { MusicContext } from "../../contexts/MusicContext";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
+import { Heart } from "../Heart";
 
 const schema = z.object({
   search: z.string().min(1, "Digite algo para pesquisar"),
@@ -35,23 +36,26 @@ export function Header() {
           <S.House size={32} />
         </NavLink>
 
-        <S.Form onSubmit={handleSubmit(handleFormSubmit)}>
+        <S.Form
+          onSubmit={handleSubmit(handleFormSubmit)}
+          error={errors.search ? true : false}
+        >
           <div>
-            <input type="text" placeholder="Buscar" {...register("search")} />
+            <input
+              type="text"
+              placeholder="Buscar"
+              {...register("search")}
+              minLength={1}
+            />
 
-            <button type="submit">
+            <button type="submit" aria-label="Buscar">
               <MagnifyingGlass size={32} />
             </button>
           </div>
-
-          {errors.search && <p>{errors.search.message}</p>}
         </S.Form>
 
         <NavLink to="/favorites" aria-label="Página de favoritos">
-          <S.Favorites>
-            <S.Heart size={32} />
-            <S.HeartFilled size={32} weight="fill" />
-          </S.Favorites>
+          <Heart />
         </NavLink>
       </div>
     </S.Container>

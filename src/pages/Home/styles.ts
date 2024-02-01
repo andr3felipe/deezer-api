@@ -3,6 +3,11 @@ import styled from "styled-components";
 export const Container = styled.main`
   max-width: 1440px;
   margin: 4rem auto;
+  padding: 1rem;
+
+  h1 {
+    margin-bottom: 2rem;
+  }
 `;
 
 export const Tracks = styled.div`

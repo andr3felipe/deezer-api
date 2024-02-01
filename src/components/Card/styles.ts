@@ -14,7 +14,17 @@ export const Container = styled.div`
 `;
 
 export const Head = styled.div`
+  position: relative;
   margin: 0 auto;
+`;
+
+export const AlignHeart = styled.button`
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
 `;
 
 export const Body = styled.div``;

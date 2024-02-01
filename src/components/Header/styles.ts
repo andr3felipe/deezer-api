@@ -1,8 +1,13 @@
-import styled from "styled-components";
-import { Heart as heart, HouseLine as house } from "@phosphor-icons/react";
+import styled, { css } from "styled-components";
+import { HouseLine as house } from "@phosphor-icons/react";
+
+interface FormProps {
+  error: boolean;
+}
 
 export const Container = styled.header`
   background-color: ${({ theme }) => theme.primary};
+  border-bottom: ${({ theme }) => theme.primary};
 
   > div {
     max-width: 1440px;
@@ -27,7 +32,7 @@ export const Container = styled.header`
   }
 `;
 
-export const Form = styled.form`
+export const Form = styled.form<FormProps>`
   p {
     margin-top: 0.5rem;
     text-align: center;
@@ -50,6 +55,13 @@ export const Form = styled.form`
       &::placeholder {
         color: ${({ theme }) => theme.text};
       }
+
+      ${({ error }) =>
+        error &&
+        css`
+          border: 2px solid red;
+          outline: none;
+        `}
     }
 
     > button {
@@ -69,25 +81,6 @@ export const Form = styled.form`
       }
     }
   }
-`;
-
-export const Favorites = styled.div`
-  &:hover {
-    svg:first-child {
-      display: none;
-    }
-
-    svg:last-child {
-      display: block;
-    }
-  }
-`;
-
-export const Heart = styled(heart)``;
-
-export const HeartFilled = styled(heart)`
-  display: none;
-  color: ${({ theme }) => theme.purple};
 `;
 
 export const House = styled(house)`

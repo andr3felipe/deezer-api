@@ -4,22 +4,29 @@ import * as S from "./styles";
 import { MusicContext } from "../../contexts/MusicContext";
 
 export function Home() {
-  const { tracks } = useContext(MusicContext);
+  const { tracks, favorites } = useContext(MusicContext);
 
   return (
     <S.Container>
+      <h1>Início</h1>
       <S.Tracks>
         {tracks ? (
-          tracks?.data.map((track) => (
-            <Card
-              key={track.id}
-              audio={track.preview}
-              image={track.album.cover_big}
-              title={track.title}
-              duration={track.duration}
-              artist={track.artist.name}
-            />
-          ))
+          tracks?.data.map((track) => {
+            const isFavorite = favorites?.some((t) => t.id === track.id);
+
+            return (
+              <Card
+                key={track.id}
+                id={track.id}
+                image={track.album.cover_big}
+                title={track.title}
+                audio={track.preview}
+                duration={track.duration}
+                artist={track.artist.name}
+                isFavorite={isFavorite}
+              />
+            );
+          })
         ) : (
           <p>Carregando...</p>
         )}
