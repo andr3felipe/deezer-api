@@ -43,6 +43,7 @@ export function Header() {
           <div>
             <input
               type="text"
+              autoComplete="off"
               data-testid="search"
               placeholder="Buscar"
               {...register("search")}

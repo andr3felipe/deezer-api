@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1707369243337" clover="3.2.0">
-  <project timestamp="1707369243337" name="All files">
-    <metrics statements="787" coveredstatements="762" conditionals="61" coveredconditionals="53" methods="31" coveredmethods="28" elements="879" coveredelements="843" complexity="0" loc="787" ncloc="787" packages="13" files="23" classes="23"/>
+<coverage generated="1707369670279" clover="3.2.0">
+  <project timestamp="1707369670280" name="All files">
+    <metrics statements="787" coveredstatements="762" conditionals="62" coveredconditionals="54" methods="31" coveredmethods="28" elements="880" coveredelements="844" complexity="0" loc="787" ncloc="787" packages="13" files="23" classes="23"/>
     <package name="src">
       <metrics statements="66" coveredstatements="57" conditionals="3" coveredconditionals="2" methods="3" coveredmethods="2"/>
       <file name="App.tsx" path="C:\Users\Programmer\deezer-api\src\App.tsx">
@@ -603,9 +603,9 @@
       </file>
     </package>
     <package name="src.http">
-      <metrics statements="19" coveredstatements="17" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <metrics statements="19" coveredstatements="17" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
       <file name="fetchSearch.ts" path="C:\Users\Programmer\deezer-api\src\http\fetchSearch.ts">
-        <metrics statements="19" coveredstatements="17" conditionals="3" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <metrics statements="19" coveredstatements="17" conditionals="4" coveredconditionals="3" methods="1" coveredmethods="1"/>
         <line num="1" count="1" type="cond" truecount="1" falsecount="0"/>
         <line num="2" count="6" type="stmt"/>
         <line num="3" count="6" type="stmt"/>
@@ -617,11 +617,11 @@
         <line num="9" count="6" type="stmt"/>
         <line num="10" count="6" type="stmt"/>
         <line num="11" count="6" type="stmt"/>
-        <line num="12" count="6" type="cond" truecount="1" falsecount="0"/>
-        <line num="13" count="1" type="stmt"/>
-        <line num="14" count="1" type="stmt"/>
-        <line num="15" count="1" type="stmt"/>
-        <line num="16" count="1" type="cond" truecount="0" falsecount="1"/>
+        <line num="12" count="6" type="cond" truecount="2" falsecount="0"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="16" count="3" type="cond" truecount="0" falsecount="1"/>
         <line num="17" count="0" type="stmt"/>
         <line num="18" count="0" type="stmt"/>
         <line num="19" count="6" type="stmt"/>
