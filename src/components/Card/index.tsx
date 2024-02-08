@@ -35,7 +35,7 @@ export function Card({
         <S.Image src={image} alt={title} width={350} height={350} />
         <S.AlignHeart>
           {isFavorite ? (
-            <Heart
+            <HeartFill
               sx={{ color: "red", fontSize: "2.2rem" }}
               data-testid="remove-from-favorites"
               aria-label="Remover dos favoritos"
@@ -54,7 +54,7 @@ export function Card({
               }
             />
           ) : (
-            <HeartFill
+            <Heart
               sx={{ color: "red", fontSize: "2.2rem" }}
               data-testid="add-to-favorites"
               aria-label="Adicionar aos favoritos"
