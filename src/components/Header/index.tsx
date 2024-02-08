@@ -32,29 +32,38 @@ export function Header() {
   return (
     <S.Container>
       <div>
-        <NavLink to="/" aria-label="Página Inicial">
+        <NavLink to="/" aria-label="Página Inicial" data-testid="house">
           <S.House size={32} />
         </NavLink>
 
         <S.Form
           onSubmit={handleSubmit(handleFormSubmit)}
-          error={errors.search ? true : false}
+          error={errors.search ? "true" : "false"}
         >
           <div>
             <input
               type="text"
+              data-testid="search"
               placeholder="Buscar"
               {...register("search")}
               minLength={1}
             />
 
-            <button type="submit" aria-label="Buscar">
+            <button
+              type="submit"
+              aria-label="Buscar"
+              data-testid="search-button"
+            >
               <MagnifyingGlass size={32} />
             </button>
           </div>
         </S.Form>
 
-        <NavLink to="/favorites" aria-label="Página de favoritos">
+        <NavLink
+          to="/favorites"
+          aria-label="Página de favoritos"
+          data-testid="favorites"
+        >
           <Heart />
         </NavLink>
       </div>

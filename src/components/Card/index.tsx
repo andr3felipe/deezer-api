@@ -36,6 +36,7 @@ export function Card({
           {isFavorite ? (
             <Heart
               size={40}
+              data-testid="remove-from-favorites"
               aria-label="Remover dos favoritos"
               weight="fill"
               color="red"
@@ -56,6 +57,7 @@ export function Card({
           ) : (
             <Heart
               size={40}
+              data-testid="add-to-favorites"
               aria-label="Adicionar aos favoritos"
               color="red"
               onClick={() =>

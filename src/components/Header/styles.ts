@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { HouseLine as house } from "@phosphor-icons/react";
 
 interface FormProps {
-  error: boolean;
+  error: "true" | "false";
 }
 
 export const Container = styled.header`
@@ -58,7 +58,7 @@ export const Form = styled.form<FormProps>`
       }
 
       ${({ error }) =>
-        error &&
+        error === "true" &&
         css`
           border: 2px solid red;
           outline: none;
