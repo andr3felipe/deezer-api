@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { Heart as heart } from "@phosphor-icons/react";
+import FavoriteIcon from "@mui/icons-material/Favorite";
 
 interface FavoritesProps {
   count?: number;
@@ -31,7 +31,9 @@ export const Favorites = styled.div<FavoritesProps>`
     `}
 `;
 
-export const Heart = styled(heart)`
+export const Heart = styled(FavoriteIcon)`
+  font-size: 2rem !important;
+
   &:hover {
     color: ${({ theme }) => theme.purple};
   }

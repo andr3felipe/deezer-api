@@ -9,8 +9,6 @@ describe("NotFound", () => {
         <NotFound />
       </BrowserRouter>
     );
-
-    screen.debug();
     expect(screen.getByText(/404/i)).toBeInTheDocument();
   });
 

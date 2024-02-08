@@ -7,7 +7,7 @@ export function Heart() {
 
   return (
     <S.Favorites count={favorites.length}>
-      <S.Heart size={32} />
+      <S.Heart />
     </S.Favorites>
   );
 }

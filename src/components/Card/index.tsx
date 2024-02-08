@@ -1,7 +1,8 @@
-import { Heart } from "@phosphor-icons/react";
 import * as S from "./styles";
 import { useContext } from "react";
 import { MusicContext } from "../../contexts/MusicContext";
+import Heart from "@mui/icons-material/FavoriteBorder";
+import HeartFill from "@mui/icons-material/Favorite";
 
 interface CardProps {
   id: number;
@@ -35,11 +36,9 @@ export function Card({
         <S.AlignHeart>
           {isFavorite ? (
             <Heart
-              size={40}
+              sx={{ color: "red", fontSize: "2.2rem" }}
               data-testid="remove-from-favorites"
               aria-label="Remover dos favoritos"
-              weight="fill"
-              color="red"
               onClick={() =>
                 setLocalStorage({
                   track: {
@@ -55,11 +54,10 @@ export function Card({
               }
             />
           ) : (
-            <Heart
-              size={40}
+            <HeartFill
+              sx={{ color: "red", fontSize: "2.2rem" }}
               data-testid="add-to-favorites"
               aria-label="Adicionar aos favoritos"
-              color="red"
               onClick={() =>
                 setLocalStorage({
                   track: {

@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import { HouseLine as house } from "@phosphor-icons/react";
+import HomeIcon from "@mui/icons-material/Home";
 
 interface FormProps {
   error: "true" | "false";
@@ -84,7 +84,9 @@ export const Form = styled.form<FormProps>`
   }
 `;
 
-export const House = styled(house)`
+export const House = styled(HomeIcon)`
+  font-size: 2rem !important;
+
   &:hover {
     color: ${({ theme }) => theme.purple};
   }

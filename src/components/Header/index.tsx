@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
 import * as S from "./styles";
-import { MagnifyingGlass } from "@phosphor-icons/react";
+import MagnifyingGlass from "@mui/icons-material/Search";
 import { useContext } from "react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { MusicContext } from "../../contexts/MusicContext";
@@ -33,7 +33,7 @@ export function Header() {
     <S.Container>
       <div>
         <NavLink to="/" aria-label="Página Inicial" data-testid="house">
-          <S.House size={32} />
+          <S.House />
         </NavLink>
 
         <S.Form
@@ -54,7 +54,7 @@ export function Header() {
               aria-label="Buscar"
               data-testid="search-button"
             >
-              <MagnifyingGlass size={32} />
+              <MagnifyingGlass sx={{ fontSize: "2rem" }} />
             </button>
           </div>
         </S.Form>
